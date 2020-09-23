@@ -28,7 +28,7 @@ int main() {
     printf("Entrer un nombre : ");
     scanf("%d", &userNb);
     if (userNb == secretNb) {
-      printf("Bravo vous avez gagné ! Vous avez fait %d essais \n", nbTry);
+      printf("Bravo vous avez gagne ! Vous avez fait %d essais \n", nbTry);
       printf("Le nombre d'essaie optimale est de %d\n", avgTry);
       break;
     }else{

@@ -59,7 +59,7 @@ int bissect(double a1, double b1, double e, double *zero){
                b1 = c1;
           }
      }
-     if(i<300){
+     if(i > 300){
           return -1;
      }
      *zero = c1;

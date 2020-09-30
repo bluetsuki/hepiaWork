@@ -22,62 +22,43 @@ struct fract fract_div(struct fract x, struct fract y);
 struct fract fract_neg(struct fract x);
 double fract_ToDouble(struct fract x);
 
-int main(){
-     char operator;
+int main(int argc, char **argv){
+     struct fract nb1;
      struct fract nb2;
-     struct fract f;
-     int p;
+     char operator;
 
-     f = userFunct();
-
-     //dump the buffer of the scanf
-     int c;
-     while ((c = getchar()) != '\n' && c != EOF) { }
-
-     printf("Quelle operation voulez-vous faire ? + - : x n (negativ) d (Decimal) p (pow) \n");
-     scanf("%c", &operator);
+     sscanf(argv[1], "%d", &nb1.numerateur);
+     sscanf(argv[2], "%d", &nb1.denominateur);
+     sscanf(argv[4], "%d", &nb2.numerateur);
+     sscanf(argv[5], "%d", &nb2.denominateur);
+     sscanf(argv[3], "%c", &operator);
 
      switch (operator) {
           case '+':
-          nb2 = userFunct();
           printf("L'addition de votre fraction est : ");
-          displayFract(fract_add(f, nb2));
+          displayFract(fract_add(nb1, nb2));
           break;
 
           case '-':
-          nb2 = userFunct();
           printf("La soustraction de votre fraction est : ");
-          displayFract(fract_sub(f, nb2));
+          displayFract(fract_sub(nb1, nb2));
           break;
 
           case ':':
-          nb2 = userFunct();
           printf("La division de votre fraction est : ");
-          displayFract(fract_div(f, nb2));
+          displayFract(fract_div(nb1, nb2));
           break;
 
           case 'x':
-          nb2 = userFunct();
           printf("L'addition de votre fraction est : ");
-          displayFract(fract_mul(f, nb2));
+          displayFract(fract_mul(nb1, nb2));
           break;
 
-          case 'n':
-          printf("Votre fraction negativ : ");
-          displayFract(fract_neg(f));
+          case '^':
+          displayFract(fract_mul(nb1, nb2));
           break;
 
-          case 'd':
-          printf("Votre fraction sous forme decimale : %lf \n", fract_ToDouble(f));
-          break;
 
-          case 'p':
-          printf("Entrer une puissance : ");
-          scanf("%d", &p);
-
-          printf("Votre fraction a la puissance de %d est : ", p);
-          displayFract(powFract(f, p));
-          break;
      }
 }
 

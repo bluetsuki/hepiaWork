@@ -5,7 +5,6 @@
 #include <stdbool.h>
 #include "fraction.h"
 
-int PGDC(struct fract x);
 struct fract fractIrre(struct fract x);
 
 void displayFract(struct fract x){
@@ -13,20 +12,20 @@ void displayFract(struct fract x){
 }
 
 int PGDC(struct fract x) {
-     int pgdc = 1;
-     if (x.numerateur == 0){
-          pgdc = x.denominateur;
-     }
-     for (int div = x.numerateur; div >= 2 ;div--) {
-          if (x.numerateur % div == 0 && x.denominateur % div == 0) {
-               pgdc = div;
-               break;
-          }
-     }
-     if (pgdc == 0) {
-          pgdc = x.denominateur;
-     }
-     return pgdc;
+    int pgdc = 1;
+    if(x.numerateur == 0){
+        pgdc = x.denominateur;
+    }
+    for (int div = x.numerateur; div >= 2 ;div--) {
+        if (x.numerateur % div == 0 && x.denominateur % div == 0) {
+            pgdc = div;
+            break;
+        }
+    }
+    if (pgdc == 0) {
+        pgdc = x.denominateur;
+    }
+    return pgdc;
 }
 
 struct fract fractIrre(struct fract x){

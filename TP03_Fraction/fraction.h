@@ -7,6 +7,7 @@ struct fract{
      int denominateur;
 };
 
+int PGDC(struct fract x);
 void displayFract(struct fract x);
 struct fract powFract(struct fract x, int p);
 struct fract userFunct();

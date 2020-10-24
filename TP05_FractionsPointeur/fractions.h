@@ -19,5 +19,6 @@ fract *fract_div(fract *x, fract *y);
 fract *fract_neg(fract x);
 double fract_ToDouble(fract x);
 void displayFract(fract *x);
+int pi (fract *x, fract *y);
 
 #endif

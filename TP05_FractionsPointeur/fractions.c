@@ -101,7 +101,3 @@ double fract_ToDouble(fract x)
 {
      return x.numerateur * 1.0 / x.denominateur;
 }
-
-int pi (fract *x, fract *y){
-     
-}

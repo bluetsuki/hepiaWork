@@ -1,7 +1,7 @@
 #ifndef _FRACTIONS_H_
 #define _FRACTIONS_H_
 
-typedef struct fracttions
+typedef struct fractions
 {
     int numerateur;
     int denominateur;

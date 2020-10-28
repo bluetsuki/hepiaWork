@@ -4,6 +4,33 @@
 #include <math.h>
 #include <stdbool.h>
 
+void addValue(int size, int tab[size]){
+     for (int i = 0; i < size; i++) {
+          tab[i] = rand() % 10;
+          // printf("tab[%d] = %d\n", i, tab[i]);
+     }
+}
+
+void orderTab(int size, int tab[size]){
+     int i;
+     int j;
+     int a;
+
+     for (i = 0; i < size; ++i)
+     {
+          for (j = i + 1; j < size; ++j)
+          {
+               if (tab[i] > tab[j])
+               {
+                    a =  tab[i];
+                    tab[i] = tab[j];
+                    tab[j] = a;
+               }
+          }
+          // printf("tab[%d] = %d\n", i, tab[i]);
+     }
+}
+
 int searchValue(int size, int tab[size], int nbUser){
      for (int i = 0; i < size; i++) {
           if (nbUser ==   tab[i]) {
@@ -13,7 +40,7 @@ int searchValue(int size, int tab[size], int nbUser){
      return false;
 }
 
-int getAverage(int size, int tab[size]){
+double getAverage(int size, int tab[size]){
      int res;
      for (int i = 0; i < size; i++) {
           res = res + tab[i];

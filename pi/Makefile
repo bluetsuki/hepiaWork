@@ -1,3 +1,4 @@
+
 all: fractions
 
 fractions: fractions.o main.o
